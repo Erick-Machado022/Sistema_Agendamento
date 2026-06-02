@@ -1,0 +1,78 @@
+body {
+    background-color: #6c757d;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-custom {
+    background-color: #ffffff;
+}
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+/* TÍTULO */
+.header-titulo {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 20px 0;
+}
+
+/* CARDS */
+.card-custom {
+    margin-top: 25px;
+    border: none;
+    border-radius: 12px;
+    padding: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: 0.2s;
+}
+
+.card-custom:hover {
+    transform: translateY(-2px);
+}
+
+/* ÍCONES */
+.icon-box {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.icon-blue { background: #e7f1ff; }
+.icon-yellow { background: #fff4db; }
+.icon-green { background: #e6f4ea; }
+
+.total {
+    height: 22px;
+}
+
+/* TEXTOS */
+small {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+h4 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* BOTÃO */
+.btn-agendar {
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 500;
+}
