@@ -24,7 +24,7 @@
 <!-- NAVBAR -->
 <header class="bg-white border-bottom">
     <nav class="navbar px-3">
-        <div class="container-fluid">
+        <div class="container">
 
             <div class="d-flex align-items-center">
                 <img src="https://cdn-icons-png.flaticon.com/512/679/679720.png" class="logo-icon">
