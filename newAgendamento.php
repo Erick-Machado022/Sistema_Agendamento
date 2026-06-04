@@ -6,14 +6,9 @@ include_once("templates/header.php")
 
 ?>
 
-<div class="header-titulo">
-    <div class="container">
-        <h2 class="fw-bold m-0">Novo Agendamento</h2>
-    </div>
-</div>
 
 <div class="container">
-    <a href="#" class="text-decoration-none text-secondary mb-3 d-inline-block">
+    <a href="<?= $BASE_URL ?>index.php" class="btn btn-outline-primary back-btn">
         <i class="bi bi-arrow-left"></i>Voltar para agendemantos
     </a>
 
@@ -24,7 +19,8 @@ include_once("templates/header.php")
                 <p class="text-muted mb-0">Preencha todos os campos para solicitar seu agendamento</p>
             </div>
 
-            <form action="" method="POST">
+            <form action="<?= $BASE_URL ?>config/process.php" method="POST">
+                <input type="hidden" name="type" value="create">
                 <div class="row g-4">
                     
                     <div class="col-md-6">
@@ -44,11 +40,11 @@ include_once("templates/header.php")
                     </div>
                     <div class="col-md-6">
                         <label for="armador" class="form-label">Armador *</label>
-                        <select class="form-select text-muted" id="armador">
+                        <select class="form-select text-muted" id="armador" name="armador">
                             <option selected>Selecione o armador</option>
-                            <option value="1">CMA CGM</option>
-                            <option value="2">Maerk</option>
-                            <option value="2">MSC</option>
+                            <option value="CMA CGM">CMA CGM</option>
+                            <option value="Maersk">Maerk</option>
+                            <option value="MSC">MSC</option>
                         </select>
                     </div>
 
@@ -56,18 +52,18 @@ include_once("templates/header.php")
                         <label for="data" class="form-label">
                             <i class="bi bi-calendar3"></i>Data *
                         </label>
-                        <input type="date" class="form-control text-muted" id="data">
+                        <input type="date" class="form-control text-muted" id="data" name="data">
                     </div>
                     <div class="col-md-6">
                         <label for="horario" class="form-label">
                             <i class="bi bi-clock"></i>Horário *
                         </label>
-                        <select class="form-select text-muted" id="horario">
+                        <select class="form-select text-muted" id="horario" name="horario">
                             <option selected>Selecione o horário</option>
-                            <option value="08:00">08:00 - 09:00</option>
-                            <option value="08:00">09:00 - 10:00</option>
-                            <option value="08:00">10:00 - 11:00</option>
-                            <option value="08:00">11:00 - 12:00</option>
+                            <option value="08:00 - 09:00">08:00 - 09:00</option>
+                            <option value="09:00 - 10:00">09:00 - 10:00</option>
+                            <option value="10:00 - 11:00">10:00 - 11:00</option>
+                            <option value="11:00 - 12:00">11:00 - 12:00</option>
                         </select>
                     </div>
 
@@ -75,28 +71,36 @@ include_once("templates/header.php")
                         <label for="placaCavalo" class="form-label">
                             <i class="bi bi-truck"></i>Placa do Cavalo *
                         </label>
-                        <input type="text" class="form-control" id="placaCavalo" placeholder="ABC-1234">
+                        <input type="text" class="form-control" id="placaCavalo" placeholder="ABC-1234" name="placaCavalo">
                     </div>
                     <div class="col-md-6">
                         <label for="placaCarreta" class="form-label">Placa da Carreta *</label>
-                        <input type="text" class="form-control" id="placaCarreta" placeholder="XYZ-9876">
+                        <input type="text" class="form-control" id="placaCarreta" name="placaCarreta" placeholder="XYZ-9876">
                     </div>
 
                     <div class="col-md-6">
                         <label for="nomeMotorista" class="form-label">
                             <i class="bi bi-person"></i>Nome do Motorista *
                         </label>
-                        <input type="text" class="form-control" id="nomeMotorista" placeholder="Nome completo do motorista">
+                        <input type="text" class="form-control" id="nomeMotorista" name="nomeMotorista" placeholder="Nome completo do motorista">
                     </div>
                     <div class="col-md-6">
                         <label for="cnhMotorista" class="form-label">CNH do Motorista *</label>
-                        <input type="text" class="form-control" id="cnhMotorista" placeholder="12345678901">
+                        <input type="text" class="form-control" id="cnhMotorista" name="cnh" placeholder="12345678901">
                     </div>
 
-                    <div class="col-12">
+                     <div class="col-12">  <!--pegar transportadora direto do dado do login -->
                         <label for="transportadora" class="form-label">Transportadora *</label>
                         <input type="text" class="form-control" id="transportadora" placeholder="Nome da empresa transportadora">
                     </div>
+
+                    <!-- BOTÃO -->
+                    <div class="col-md-3">
+                            
+                            <button type="submit"  class="btn btn-primary w-100 btn-agendar">Realizar agendamento</button>
+                    </div>
+
+
                 </div>
             </form>
 
