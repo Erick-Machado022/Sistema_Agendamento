@@ -49,6 +49,19 @@ include_once("templates/header.php")
                     </div>
 
                     <div class="col-md-6">
+                        <label for="numeroContainer" class="form-label">
+                            <i class="bi bi-box-seam"></i> Número do Container *
+                        </label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="numeroContainer"
+                            name="container"
+                            placeholder="nº container"
+                            maxlength="11">
+                    </div>
+
+                    <div class="col-md-6">
                         <label for="data" class="form-label">
                             <i class="bi bi-calendar3"></i>Data *
                         </label>

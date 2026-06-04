@@ -25,9 +25,11 @@
 
             $nomeMotorista = $dado["nomeMotorista"];
 
+            $container = $dado["container"];
+
             $cnh = $dado["cnh"];
 
-            $QUERY = "INSERT INTO new_agendamento(armador, cnh_motorista, data_agendamento, horario, nome_motorista, placa_carreta, placa_cavalo, tipo_operacao) VALUES(:armador, :cnh, :data, :horario, :nomeMotorista, :placaCarreta, :placaCavalo, :tipoOperacao)";
+            $QUERY = "INSERT INTO new_agendamento(armador, cnh_motorista, data_agendamento, horario, nome_motorista, placa_carreta, placa_cavalo, tipo_operacao, container) VALUES(:armador, :cnh, :data, :horario, :nomeMotorista, :placaCarreta, :placaCavalo, :tipoOperacao, :container)";
 
             $stmt = $conn->prepare($QUERY);
 
@@ -39,6 +41,7 @@
             $stmt->bindParam(":placaCarreta", $placaCarreta);
             $stmt->bindParam(":placaCavalo", $placaCavalo);
             $stmt->bindParam(":tipoOperacao", $tipoOperacao);
+            $stmt->bindParam(":container", $container);
 
             try{
 
