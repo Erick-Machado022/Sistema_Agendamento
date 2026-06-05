@@ -40,7 +40,7 @@ include_once("templates/header.php")
                     </div>
                     <div class="col-md-6">
                         <label for="armador" class="form-label">Armador *</label>
-                        <select class="form-select text-muted" id="armador" name="armador">
+                        <select class="form-select text-muted" id="armador" name="armador" required>
                             <option selected>Selecione o armador</option>
                             <option value="CMA CGM">CMA CGM</option>
                             <option value="Maersk">Maerk</option>
@@ -58,20 +58,20 @@ include_once("templates/header.php")
                             id="numeroContainer"
                             name="container"
                             placeholder="nº container"
-                            maxlength="11">
+                            maxlength="11" required>
                     </div>
 
                     <div class="col-md-6">
                         <label for="data" class="form-label">
                             <i class="bi bi-calendar3"></i>Data *
                         </label>
-                        <input type="date" class="form-control text-muted" id="data" name="data">
+                        <input type="date" class="form-control text-muted" id="data" name="data" required>
                     </div>
                     <div class="col-md-6">
                         <label for="horario" class="form-label">
                             <i class="bi bi-clock"></i>Horário *
                         </label>
-                        <select class="form-select text-muted" id="horario" name="horario">
+                        <select class="form-select text-muted" id="horario" name="horario" required>
                             <option selected>Selecione o horário</option>
                             <option value="08:00 - 09:00">08:00 - 09:00</option>
                             <option value="09:00 - 10:00">09:00 - 10:00</option>
@@ -84,22 +84,22 @@ include_once("templates/header.php")
                         <label for="placaCavalo" class="form-label">
                             <i class="bi bi-truck"></i>Placa do Cavalo *
                         </label>
-                        <input type="text" class="form-control" id="placaCavalo" placeholder="ABC-1234" name="placaCavalo">
+                        <input type="text" class="form-control" id="placaCavalo" placeholder="ABC-1234" name="placaCavalo" required>
                     </div>
                     <div class="col-md-6">
                         <label for="placaCarreta" class="form-label">Placa da Carreta *</label>
-                        <input type="text" class="form-control" id="placaCarreta" name="placaCarreta" placeholder="XYZ-9876">
+                        <input type="text" class="form-control" id="placaCarreta" name="placaCarreta" placeholder="XYZ-9876" required>
                     </div>
 
                     <div class="col-md-6">
                         <label for="nomeMotorista" class="form-label">
                             <i class="bi bi-person"></i>Nome do Motorista *
                         </label>
-                        <input type="text" class="form-control" id="nomeMotorista" name="nomeMotorista" placeholder="Nome completo do motorista">
+                        <input type="text" class="form-control" id="nomeMotorista" name="nomeMotorista" placeholder="Nome completo do motorista" required>
                     </div>
                     <div class="col-md-6">
                         <label for="cnhMotorista" class="form-label">CNH do Motorista *</label>
-                        <input type="text" class="form-control" id="cnhMotorista" name="cnh" placeholder="12345678901">
+                        <input type="text" class="form-control" id="cnhMotorista" name="cnh" placeholder="12345678901" required>
                     </div>
 
                      <div class="col-12">  <!--pegar transportadora direto do dado do login -->
