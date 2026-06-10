@@ -46,7 +46,11 @@
             try{
 
                     $stmt->execute();
-                    echo "Agendamento Realizado";
+                    $_SESSION['msg'] = "Container Agendado!";
+
+                    header("Location: ../index.php");
+                    exit;
+
 
                 }catch(PDOException $e) {
                     //Erro de comixão
@@ -60,6 +64,7 @@
 
         header("Location: " . $BASE_URL . "../index.php");  
 
+        $conn = null;
 
 
 
