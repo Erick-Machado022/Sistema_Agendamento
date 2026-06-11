@@ -48,7 +48,7 @@ if (isset($_SESSION['msg'])) {
                     </div>
                     <div>
                         <small>Total</small>
-                        <h4 class="mb-0">2</h4>
+                        <h4 class="mb-0"><?= count($agendamento)?></h4>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@ if (isset($_SESSION['msg'])) {
             </div>
 
             <div class="table-responsive">
-                <?php if (count($informação) > 0): ?>
+                <?php if (count($agendamento) > 0): ?>
                     <table class="table table-hover align-middle">
 
                         <thead class="table-light">
@@ -124,16 +124,16 @@ if (isset($_SESSION['msg'])) {
                             </tr>
                         </thead>
 
-                        <?php foreach ($informação as $agendamentos): ?> <tbody>
+                        <?php foreach ($agendamento as $coluna): ?> <tbody>
 
                                 <tr>
-                                    <td><?= $agendamentos["id"] ?></td>
-                                    <td><?= $agendamentos["container"] ?></td>
-                                    <td><?= $agendamentos["tipo_operacao"] ?></td>
-                                    <td><?= $agendamentos["armador"] ?></td>
-                                    <td><?= $agendamentos["data_agendamento"] ?></td>
-                                    <td><?= $agendamentos["horario"] ?></td>
-                                    <td><?= $agendamentos["nome_motorista"] ?></td>
+                                    <td><?= $coluna["id"] ?></td>
+                                    <td><?= $coluna["container"] ?></td>
+                                    <td><?= $coluna["tipo_operacao"] ?></td>
+                                    <td><?= $coluna["armador"] ?></td>
+                                    <td><?= $coluna["data_agendamento"] ?></td>
+                                    <td><?= $coluna["horario"] ?></td>
+                                    <td><?= $coluna["nome_motorista"] ?></td>
 
                                     <td>
                                         <span class="badge bg-warning text-dark">

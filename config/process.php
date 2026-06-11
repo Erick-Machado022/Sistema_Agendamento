@@ -85,7 +85,7 @@
             $informação = [];
             $stmt = $conn->prepare($QUERY);
             $stmt->execute();
-            $informação = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $agendamento = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }
 
