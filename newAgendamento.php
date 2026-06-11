@@ -41,7 +41,7 @@ include_once("templates/header.php")
                     <div class="col-md-6">
                         <label for="armador" class="form-label">Armador *</label>
                         <select class="form-select text-muted" id="armador" name="armador" required>
-                            <option selected>Selecione o armador</option>
+                            <option value="" disabled selected>Selecione o armador</option>
                             <option value="CMA CGM">CMA CGM</option>
                             <option value="Maersk">Maerk</option>
                             <option value="MSC">MSC</option>
