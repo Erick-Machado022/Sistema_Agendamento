@@ -1,7 +1,5 @@
 <?php
 
-
-    session_start();
     include_once("conexao.php");
     include_once("url.php");
 
@@ -58,19 +56,40 @@
                     echo "ERRO: $error";
                 }
             
+             header("Location: " . $BASE_URL . "../index.php");  
 
 
         }
 
-        header("Location: " . $BASE_URL . "../index.php");  
-
-        $conn = null;
 
 
 
 
+    }else{
+        $id = null;
 
+        if(!empty($_GET)){
+            $id = $_GET["id"];
+        }
+
+
+
+        if(!empty($id)){
+            $QUERY = "SELECT * FROM new_agendamento WHERE id= :id";
+            $stmt = $conn->prepare($QUERY);
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+            $informação = $stmt->fetch();
+        }else{
+            $QUERY = "SELECT * FROM new_agendamento";
+            $informação = [];
+            $stmt = $conn->prepare($QUERY);
+            $stmt->execute();
+            $informação = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
+
+    $conn = null;
 
 
     
