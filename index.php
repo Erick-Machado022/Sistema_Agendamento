@@ -10,6 +10,15 @@ if (isset($_SESSION['msg'])) {
     $_SESSION["msg"] = "";
 }
 
+$pendentes = 0;
+
+foreach ($agendamento as $agendamentos) {
+    if ($agendamentos["status"] == "pendente") {
+        $pendentes++;
+    }
+}
+
+
 ?>
 
 <!-- HEADER (faixa cinza) -->
@@ -63,7 +72,7 @@ if (isset($_SESSION['msg'])) {
                     </div>
                     <div>
                         <small>Pendentes</small>
-                        <h4 class="mb-0">1</h4>
+                        <h4 class="mb-0"><?= $pendentes ?></h4>
                     </div>
                 </div>
             </div>
@@ -137,7 +146,7 @@ if (isset($_SESSION['msg'])) {
 
                                     <td>
                                         <span class="badge bg-warning text-dark">
-                                            Pendente
+                                            <?= $coluna["status"] ?>
                                         </span>
                                     </td>
 
